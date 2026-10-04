@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#ff1744" />
+<meta name="description" content="NEXXOO System Interface" />
 <title>NEXXOO // SYSTEM BREACH</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,7 +15,6 @@
     --text: #f5f5f7;
     --muted: #7a7a8a;
     --red: #ff1744;
-    --red-glow: rgba(255,23,68,.9);
     --green: #00e676;
     --yellow: #ffb300;
     --border: rgba(255,23,68,.18);
@@ -33,12 +34,10 @@
     position: relative;
   }
 
-  /* ===== BLOOD DRIP (top of page) ===== */
+  /* Blood Drip */
   .blood-drip {
     position: fixed; top: 0; left: 0; right: 0;
-    height: 120px;
-    pointer-events: none;
-    z-index: 3;
+    height: 120px; pointer-events: none; z-index: 3;
   }
   .blood-drip::before {
     content: '';
@@ -47,8 +46,7 @@
     filter: blur(2px);
   }
   .drip {
-    position: absolute; top: 20px;
-    width: 4px;
+    position: absolute; top: 20px; width: 4px;
     background: linear-gradient(180deg, #ff1744, #8c0020);
     border-radius: 0 0 50% 50%;
     box-shadow: 0 0 8px rgba(255,23,68,.8);
@@ -61,18 +59,13 @@
     100% { height: 100px; opacity: 0; }
   }
 
-  /* ===== SKULL RAIN ===== */
+  /* Skull Rain */
   .skull-rain {
-    position: fixed; inset: 0;
-    pointer-events: none;
-    z-index: 1;
-    overflow: hidden;
+    position: fixed; inset: 0; pointer-events: none; z-index: 1; overflow: hidden;
   }
   .skull {
-    position: absolute;
-    color: rgba(255,23,68,.15);
-    font-size: 20px;
-    animation: skullFall linear infinite;
+    position: absolute; color: rgba(255,23,68,.15);
+    font-size: 20px; animation: skullFall linear infinite;
     text-shadow: 0 0 10px rgba(255,23,68,.4);
   }
   @keyframes skullFall {
@@ -81,13 +74,11 @@
     100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
   }
 
-  /* ===== GLITCH FLASH ===== */
+  /* Glitch Flash */
   .glitch-flash {
     position: fixed; inset: 0;
     background: rgba(255,23,68,.15);
-    pointer-events: none;
-    z-index: 4;
-    opacity: 0;
+    pointer-events: none; z-index: 4; opacity: 0;
     animation: glitchFlash 6s infinite;
   }
   @keyframes glitchFlash {
@@ -98,7 +89,7 @@
     96% { opacity: 0; }
   }
 
-  /* ===== SCANLINES ===== */
+  /* Scanlines */
   body::before {
     content: '';
     position: fixed; inset: 0; z-index: 2;
@@ -106,8 +97,7 @@
       0deg,
       rgba(255,23,68,.035) 0px,
       rgba(255,23,68,.035) 1px,
-      transparent 1px,
-      transparent 3px
+      transparent 1px, transparent 3px
     );
     pointer-events: none;
     animation: scanMove 6s linear infinite;
@@ -117,7 +107,7 @@
     to { background-position-y: 100px; }
   }
 
-  /* ===== HEADER ===== */
+  /* Header */
   header {
     position: fixed; top: 0; left: 0; right: 0; z-index: 50;
     background: rgba(3,3,5,.9);
@@ -135,7 +125,6 @@
     background: linear-gradient(135deg, #ff1744, #2a0009);
     box-shadow: 0 0 30px rgba(255,23,68,.8);
     animation: logoPulse 2s infinite;
-    position: relative;
   }
   @keyframes logoPulse {
     0%,100% { box-shadow: 0 0 20px rgba(255,23,68,.5); transform: scale(1); }
@@ -145,8 +134,7 @@
   .brand-title {
     font-size: 15px; font-weight: 900; letter-spacing: .14em;
     background: linear-gradient(90deg, #fff 0%, #ff1744 50%, #fff 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
+    -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 200% auto;
     animation: glitchText 2s linear infinite;
@@ -183,7 +171,7 @@
     50% { opacity: 1; transform: scale(1.4); }
   }
 
-  /* ===== WARNING BANNER ===== */
+  /* Warn banner */
   .warn-banner {
     position: fixed; top: 66px; left: 0; right: 0; z-index: 49;
     background: linear-gradient(90deg, rgba(255,23,68,.22), rgba(255,23,68,.08), rgba(255,23,68,.22));
@@ -203,7 +191,7 @@
   }
   @keyframes scrollWarn { to { transform: translateX(-100%); } }
 
-  /* ===== MAIN ===== */
+  /* Main */
   main { max-width: 650px; margin: auto; padding: 130px 16px 35px; position: relative; z-index: 5; }
 
   .card {
@@ -231,8 +219,6 @@
     0%,100% { opacity: .14; }
     50% { opacity: .32; }
   }
-
-  /* Corner brackets - animated */
   .corner {
     position: absolute; width: 22px; height: 22px;
     border-color: var(--red); opacity: .8;
@@ -272,11 +258,7 @@
   }
   h1 span {
     color: var(--red);
-    text-shadow:
-      0 0 20px rgba(255,23,68,.9),
-      0 0 40px rgba(255,23,68,.6),
-      0 0 80px rgba(255,23,68,.3);
-    position: relative;
+    text-shadow: 0 0 20px rgba(255,23,68,.9), 0 0 40px rgba(255,23,68,.6), 0 0 80px rgba(255,23,68,.3);
     animation: textFlicker 3s infinite;
   }
   @keyframes textFlicker {
@@ -285,7 +267,6 @@
     94% { opacity: 1; }
     96% { opacity: .6; }
   }
-
   .subtitle {
     margin: 13px auto 0; max-width: 440px;
     color: var(--muted); font-size: 12px; line-height: 1.7;
@@ -323,10 +304,7 @@
   }
   .input:focus-within {
     border-color: rgba(255,23,68,.85);
-    box-shadow:
-      0 0 0 4px rgba(255,23,68,.12),
-      0 0 30px rgba(255,23,68,.4),
-      inset 0 0 20px rgba(255,23,68,.08);
+    box-shadow: 0 0 0 4px rgba(255,23,68,.12), 0 0 30px rgba(255,23,68,.4);
   }
   .prefix {
     width: 38px; height: 38px;
@@ -345,6 +323,27 @@
   input::placeholder { color: #3c3c48; }
   .count input { max-width: 180px; }
 
+  /* Country selector */
+  .country-select {
+    display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap;
+  }
+  .country-btn {
+    flex: 1; min-width: 60px;
+    padding: 8px 10px; border-radius: 9px;
+    background: var(--input-bg);
+    border: 1px solid rgba(255,23,68,.2);
+    color: #aaaab8; font-size: 10px; font-weight: 800;
+    letter-spacing: .08em; cursor: pointer; transition: .2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .country-btn:hover { border-color: rgba(255,23,68,.5); color: #fff; }
+  .country-btn.active {
+    background: rgba(255,23,68,.15);
+    border-color: var(--red);
+    color: #ff6685;
+    box-shadow: 0 0 15px rgba(255,23,68,.4);
+  }
+
   .btn-wrapper {
     margin-top: 24px;
     display: flex; flex-direction: column; align-items: center; gap: 12px;
@@ -356,10 +355,7 @@
     background-size: 200% auto;
     color: white; font-size: 13px; font-weight: 900;
     letter-spacing: .18em; cursor: pointer;
-    box-shadow:
-      0 4px 0 #4a0015,
-      0 20px 50px rgba(255,23,68,.5),
-      inset 0 1px 0 rgba(255,255,255,.2);
+    box-shadow: 0 4px 0 #4a0015, 0 20px 50px rgba(255,23,68,.5), inset 0 1px 0 rgba(255,255,255,.2);
     transition: .3s;
     display: flex; align-items: center; justify-content: center; gap: 9px;
     position: relative; overflow: hidden;
@@ -378,30 +374,18 @@
   button.start:hover:not(:disabled)::before { left: 100%; }
   button.start:hover:not(:disabled) {
     transform: translateY(-3px);
-    box-shadow:
-      0 6px 0 #4a0015,
-      0 25px 60px rgba(255,23,68,.7);
+    box-shadow: 0 6px 0 #4a0015, 0 25px 60px rgba(255,23,68,.7);
     letter-spacing: .22em;
   }
   button.start:active { transform: translateY(2px); }
   button.start:disabled { opacity: .8; cursor: not-allowed; }
-  button.start i { animation: bombShake 2s infinite; }
-  @keyframes bombShake {
-    0%,80%,100% { transform: rotate(0); }
-    85% { transform: rotate(-10deg); }
-    90% { transform: rotate(10deg); }
-    95% { transform: rotate(-5deg); }
-  }
 
   .powered-by {
     font-family: 'JetBrains Mono', monospace;
     color: #4a4a56; font-size: 9px; letter-spacing: .2em;
     text-transform: uppercase;
   }
-  .powered-by b {
-    color: #ff1744;
-    text-shadow: 0 0 10px rgba(255,23,68,.8);
-  }
+  .powered-by b { color: #ff1744; text-shadow: 0 0 10px rgba(255,23,68,.8); }
 
   footer {
     text-align: center; padding: 22px 15px 32px;
@@ -415,17 +399,13 @@
     text-shadow: 0 0 15px rgba(255,23,68,.8);
   }
 
-  /* ===== FULLSCREEN ALERT ===== */
+  /* Alert Overlay */
   .alert-overlay {
     position: fixed; inset: 0; z-index: 9999;
-    background:
-      radial-gradient(circle at 50% 50%, rgba(255,23,68,.15), transparent 60%),
-      rgba(3,0,2,.98);
+    background: radial-gradient(circle at 50% 50%, rgba(255,23,68,.15), transparent 60%), rgba(3,0,2,.98);
     backdrop-filter: blur(10px);
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: none; flex-direction: column;
+    align-items: center; justify-content: center;
     padding: 20px;
     font-family: 'JetBrains Mono', monospace;
     animation: alertIn .3s ease-out;
@@ -433,11 +413,8 @@
   }
   .alert-overlay.show { display: flex; }
   @keyframes alertIn { from { opacity: 0; } to { opacity: 1; } }
-
-  /* Red flashing vignette */
   .alert-overlay::before {
-    content: '';
-    position: absolute; inset: 0;
+    content: ''; position: absolute; inset: 0;
     background: radial-gradient(circle at center, transparent 40%, rgba(255,23,68,.35) 100%);
     pointer-events: none;
     animation: vignetteFlash 1s infinite;
@@ -446,58 +423,38 @@
     0%,100% { opacity: .6; }
     50% { opacity: 1; }
   }
-  /* Scanlines on overlay */
   .alert-overlay::after {
-    content: '';
-    position: absolute; inset: 0;
+    content: ''; position: absolute; inset: 0;
     background: repeating-linear-gradient(
-      0deg,
-      rgba(255,23,68,.05) 0px,
-      rgba(255,23,68,.05) 1px,
-      transparent 1px, transparent 3px
+      0deg, rgba(255,23,68,.05) 0px, rgba(255,23,68,.05) 1px, transparent 1px, transparent 3px
     );
     pointer-events: none;
     animation: scanMove 3s linear infinite;
   }
 
-  .alert-content {
-    max-width: 640px; width: 100%;
-    position: relative; z-index: 2;
-  }
+  .alert-content { max-width: 640px; width: 100%; position: relative; z-index: 2; }
 
   .alert-header { text-align: center; margin-bottom: 20px; }
   .alert-icon {
-    width: 80px; height: 80px;
-    margin: 0 auto 14px;
+    width: 80px; height: 80px; margin: 0 auto 14px;
     border-radius: 50%;
     background: rgba(255,23,68,.2);
     border: 3px solid var(--red);
     display: grid; place-items: center;
     font-size: 34px; color: var(--red);
     animation: alertIconPulse 1s infinite;
-    box-shadow:
-      0 0 40px rgba(255,23,68,.8),
-      inset 0 0 20px rgba(255,23,68,.4);
+    box-shadow: 0 0 40px rgba(255,23,68,.8), inset 0 0 20px rgba(255,23,68,.4);
   }
   @keyframes alertIconPulse {
-    0%,100% {
-      transform: scale(1);
-      box-shadow: 0 0 30px rgba(255,23,68,.7), inset 0 0 20px rgba(255,23,68,.4);
-    }
-    50% {
-      transform: scale(1.1);
-      box-shadow: 0 0 70px rgba(255,23,68,1), inset 0 0 30px rgba(255,23,68,.6);
-    }
+    0%,100% { transform: scale(1); box-shadow: 0 0 30px rgba(255,23,68,.7), inset 0 0 20px rgba(255,23,68,.4); }
+    50% { transform: scale(1.1); box-shadow: 0 0 70px rgba(255,23,68,1), inset 0 0 30px rgba(255,23,68,.6); }
   }
 
   .alert-title {
     font-size: clamp(1.1rem, 5vw, 1.7rem);
-    font-weight: 900;
-    color: var(--red);
+    font-weight: 900; color: var(--red);
     letter-spacing: .12em;
-    text-shadow:
-      0 0 20px rgba(255,23,68,.9),
-      0 0 40px rgba(255,23,68,.6);
+    text-shadow: 0 0 20px rgba(255,23,68,.9), 0 0 40px rgba(255,23,68,.6);
     animation: alertBlink 1s infinite;
     font-family: 'Inter', sans-serif;
     text-align: center;
@@ -507,10 +464,8 @@
     50% { opacity: .5; }
   }
   .alert-sub {
-    color: #ff6685;
-    font-size: 11px;
-    margin-top: 8px;
-    letter-spacing: .18em;
+    color: #ff6685; font-size: 11px;
+    margin-top: 8px; letter-spacing: .18em;
     text-align: center;
   }
 
@@ -520,13 +475,9 @@
     border-radius: 12px;
     padding: 16px 18px;
     margin-top: 18px;
-    box-shadow:
-      inset 0 0 60px rgba(255,23,68,.1),
-      0 0 50px rgba(255,23,68,.25);
-    font-size: 12px;
-    line-height: 2;
-    min-height: 260px;
-    max-height: 50vh;
+    box-shadow: inset 0 0 60px rgba(255,23,68,.1), 0 0 50px rgba(255,23,68,.25);
+    font-size: 12px; line-height: 2;
+    min-height: 260px; max-height: 50vh;
     overflow-y: auto;
   }
   .terminal::-webkit-scrollbar { width: 5px; }
@@ -549,10 +500,8 @@
   .t-line .val.blue { color: #66b3ff; }
   .t-line.danger { color: var(--red); font-weight: 700; }
   .t-line.big {
-    font-size: 13px;
-    color: #fff;
-    font-weight: 800;
-    letter-spacing: .05em;
+    font-size: 13px; color: #fff;
+    font-weight: 800; letter-spacing: .05em;
     margin: 8px 0;
     text-shadow: 0 0 15px rgba(255,23,68,.7);
   }
@@ -572,8 +521,7 @@
     border: 2px dashed rgba(255,23,68,.7);
     border-radius: 10px;
     color: #ff6685;
-    font-size: 12px;
-    font-weight: 800;
+    font-size: 12px; font-weight: 800;
     letter-spacing: .15em;
     animation: adminPulse 1.4s infinite;
     background: rgba(255,23,68,.06);
@@ -602,17 +550,15 @@
     box-shadow: 0 0 20px rgba(255,255,255,.15);
   }
 
-  /* ===== BOOT SCREEN ===== */
+  /* Boot Screen */
   .boot-screen {
     position: fixed; inset: 0; z-index: 99999;
     background: #000;
     display: none;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: center; justify-content: center;
     font-family: 'JetBrains Mono', monospace;
-    color: var(--red);
-    padding: 20px;
+    color: var(--red); padding: 20px;
   }
   .boot-screen.show { display: flex; }
   .boot-logo {
@@ -648,7 +594,6 @@
     text-align: center;
   }
 
-  /* ===== SHAKE ===== */
   .shake { animation: shakeAnim .6s ease-in-out; }
   @keyframes shakeAnim {
     0%,100% { transform: translate(0); }
@@ -656,24 +601,20 @@
     20%,40%,60%,80% { transform: translate(5px, -2px); }
   }
 
-  /* ===== COUNTDOWN ===== */
+  /* Countdown */
   .countdown-overlay {
     position: fixed; inset: 0; z-index: 99998;
     background: rgba(3,0,2,.95);
     display: none;
-    align-items: center;
-    justify-content: center;
+    align-items: center; justify-content: center;
     flex-direction: column;
   }
   .countdown-overlay.show { display: flex; }
   .countdown-num {
-    font-size: 180px;
-    font-weight: 900;
+    font-size: 180px; font-weight: 900;
     color: var(--red);
     font-family: 'Inter', sans-serif;
-    text-shadow:
-      0 0 40px rgba(255,23,68,.9),
-      0 0 80px rgba(255,23,68,.6);
+    text-shadow: 0 0 40px rgba(255,23,68,.9), 0 0 80px rgba(255,23,68,.6);
     animation: countPop .9s ease-out;
   }
   @keyframes countPop {
@@ -684,24 +625,19 @@
   .countdown-label {
     font-family: 'JetBrains Mono', monospace;
     color: #ff6685; font-size: 14px;
-    letter-spacing: .3em;
-    margin-top: 20px;
+    letter-spacing: .3em; margin-top: 20px;
     animation: warnBlink 1s infinite;
   }
 
-  /* ===== FAKE CAMERA POPUP ===== */
+  /* Camera Popup */
   .cam-popup {
-    position: fixed;
-    top: 90px; right: 20px;
-    z-index: 10000;
-    width: 160px;
+    position: fixed; top: 90px; right: 20px;
+    z-index: 10000; width: 160px;
     background: #0a0005;
     border: 2px solid var(--red);
-    border-radius: 10px;
-    padding: 8px;
+    border-radius: 10px; padding: 8px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    color: var(--red);
+    font-size: 9px; color: var(--red);
     display: none;
     box-shadow: 0 0 30px rgba(255,23,68,.7);
   }
@@ -726,8 +662,7 @@
   }
   .cam-view {
     height: 90px;
-    background:
-      linear-gradient(135deg, #1a1a22 25%, #0a0a10 25%, #0a0a10 50%, #1a1a22 50%, #1a1a22 75%, #0a0a10 75%);
+    background: linear-gradient(135deg, #1a1a22 25%, #0a0a10 25%, #0a0a10 50%, #1a1a22 50%, #1a1a22 75%, #0a0a10 75%);
     background-size: 8px 8px;
     border-radius: 5px;
     display: grid; place-items: center;
@@ -735,18 +670,16 @@
     position: relative;
   }
   .cam-view::after {
-    content: '';
-    position: absolute; inset: 0;
+    content: ''; position: absolute; inset: 0;
     background: repeating-linear-gradient(
       0deg, transparent 0, transparent 2px,
       rgba(255,23,68,.15) 2px, rgba(255,23,68,.15) 3px
     );
   }
 
-  /* ===== ACCESS DENIED POPUP ===== */
+  /* Access Denied */
   .denied-popup {
-    position: fixed;
-    top: 50%; left: 50%;
+    position: fixed; top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100000;
     background: #0a0005;
@@ -767,14 +700,12 @@
   }
   .denied-popup h3 {
     color: var(--red);
-    font-size: 18px;
-    font-weight: 900;
+    font-size: 18px; font-weight: 900;
     letter-spacing: .15em;
     text-shadow: 0 0 15px rgba(255,23,68,.9);
   }
   .denied-popup p {
-    color: #ff6685;
-    font-size: 11px;
+    color: #ff6685; font-size: 11px;
     margin-top: 8px;
     font-family: 'JetBrains Mono', monospace;
     letter-spacing: .1em;
@@ -824,7 +755,7 @@
 
 <div class="warn-banner">
   <div class="warn-track">
-    ⚠ NEXXOO SYSTEM // UNAUTHORIZED ACCESS DETECTED // SIMULATION MODE ACTIVE // NO REAL SMS TRANSMITTED // FOR ENTERTAINMENT ONLY // ⚠ NEXXOO SYSTEM // UNAUTHORIZED ACCESS DETECTED // SIMULATION MODE ACTIVE // NO REAL SMS TRANSMITTED //
+    ⚠ NEXXOO SYSTEM // UNAUTHORIZED ACCESS DETECTED // SIMULATION MODE ACTIVE // NO REAL SMS TRANSMITTED // FOR ENTERTAINMENT ONLY // ⚠ NEXXOO SYSTEM // UNAUTHORIZED ACCESS DETECTED //
   </div>
 </div>
 
@@ -842,10 +773,20 @@
     <div class="divider"></div>
 
     <div class="field">
+      <label><i class="fa-solid fa-globe"></i> Select Region</label>
+      <div class="country-select" id="countrySelect">
+        <button class="country-btn active" data-country="in">🇮🇳 India</button>
+        <button class="country-btn" data-country="pk">🇵🇰 Pakistan</button>
+        <button class="country-btn" data-country="uk">🇬🇧 UK</button>
+        <button class="country-btn" data-country="us">🇺🇸 USA</button>
+      </div>
+    </div>
+
+    <div class="field">
       <label><i class="fa-solid fa-crosshairs"></i> Target Number</label>
       <div class="input">
-        <div class="prefix">+</div>
-        <input id="phone" type="tel" inputmode="numeric" placeholder="923001234567" autocomplete="off" />
+        <div class="prefix" id="prefixDisplay">+91</div>
+        <input id="phone" type="tel" inputmode="numeric" placeholder="9456789012" autocomplete="off" />
       </div>
     </div>
 
@@ -872,13 +813,13 @@
   </div>
 </footer>
 
-<!-- Countdown Overlay -->
+<!-- Countdown -->
 <div class="countdown-overlay" id="countdownOverlay">
   <div class="countdown-num" id="countdownNum">5</div>
   <div class="countdown-label">CONNECTION LOCKING...</div>
 </div>
 
-<!-- Alert Overlay -->
+<!-- Alert -->
 <div class="alert-overlay" id="alertOverlay">
   <div class="alert-content">
     <div class="alert-header">
@@ -901,13 +842,13 @@
   </div>
 </div>
 
-<!-- Fake Camera Popup -->
+<!-- Camera -->
 <div class="cam-popup" id="camPopup">
   <div class="cam-head"><div class="cam-dot"></div> REC · CAM-01</div>
   <div class="cam-view">● LIVE FEED</div>
 </div>
 
-<!-- Access Denied Popup -->
+<!-- Denied -->
 <div class="denied-popup" id="deniedPopup">
   <i class="fa-solid fa-ban"></i>
   <h3>ACCESS DENIED</h3>
@@ -916,9 +857,8 @@
 
 <script>
   // ============================================
-  //  NEXXOO — DANGEROUS EDITION
-  //  100% fake. Koi real detection nahi. Sirf dikhawa.
-  //  Dost ko darane ke liye — mazaak ke liye.
+  //  NEXXOO PRANK — 100% FAKE
+  //  Koi real detection nahi. Sirf dikhawa.
   // ============================================
 
   const phone = document.getElementById('phone');
@@ -933,14 +873,36 @@
   const countdownNum = document.getElementById('countdownNum');
   const camPopup = document.getElementById('camPopup');
   const deniedPopup = document.getElementById('deniedPopup');
+  const prefixDisplay = document.getElementById('prefixDisplay');
+  const countryBtns = document.querySelectorAll('.country-btn');
 
   let running = false;
+  let currentCountry = 'in';
+
+  // Country data — fake locations
+  const COUNTRIES = {
+    in: { prefix: '+91', location: 'Dehradun, Uttarakhand, India 🇮🇳', carrier: 'Jio 4G', device: 'Android 13 / Xiaomi', ip: () => `49.${rand(10,250)}.${rand(10,250)}.${rand(10,250)}` },
+    pk: { prefix: '+92', location: 'Karachi, Sindh, Pakistan 🇵🇰', carrier: 'Jazz 4G', device: 'Android 12 / Samsung', ip: () => `39.${rand(10,250)}.${rand(10,250)}.${rand(10,250)}` },
+    uk: { prefix: '+44', location: 'London, United Kingdom 🇬🇧', carrier: 'Vodafone UK', device: 'Android 13 / Samsung Galaxy', ip: () => `51.${rand(10,250)}.${rand(10,250)}.${rand(10,250)}` },
+    us: { prefix: '+1', location: 'New York, USA 🇺🇸', carrier: 'T-Mobile US', device: 'Android 14 / Google Pixel', ip: () => `72.${rand(10,250)}.${rand(10,250)}.${rand(10,250)}` }
+  };
 
   function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
   function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
   function pad(n) { return String(n).padStart(2, '0'); }
 
-  // ===== BLOOD DRIP =====
+  // Country selection
+  countryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      countryBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentCountry = btn.dataset.country;
+      prefixDisplay.textContent = COUNTRIES[currentCountry].prefix;
+      beep(800, 40, 'sine', 0.03);
+    });
+  });
+
+  // Blood drip
   (function createDrips() {
     const drip = document.getElementById('bloodDrip');
     for (let i = 0; i < 14; i++) {
@@ -954,7 +916,7 @@
     }
   })();
 
-  // ===== SKULL RAIN =====
+  // Skull rain
   (function createSkulls() {
     const rain = document.getElementById('skullRain');
     const icons = ['💀', '☠', '💀', '☠', '💀'];
@@ -970,7 +932,7 @@
     }
   })();
 
-  // ===== AUDIO: BEEP (using Web Audio API) =====
+  // Audio
   let audioCtx = null;
   function beep(freq = 800, duration = 80, type = 'square', vol = 0.04) {
     try {
@@ -986,34 +948,24 @@
       osc.stop(audioCtx.currentTime + duration / 1000);
     } catch (e) {}
   }
-
   function alarmSound() {
     beep(1200, 100, 'square', 0.06);
     setTimeout(() => beep(900, 100, 'square', 0.06), 120);
     setTimeout(() => beep(1200, 100, 'square', 0.06), 240);
     setTimeout(() => beep(900, 100, 'square', 0.06), 360);
   }
-
-  // ===== VIBRATION =====
   function vibrate(pattern) {
     if (navigator.vibrate) navigator.vibrate(pattern);
   }
 
-  // ===== FAKE IP / DATA =====
-  function fakeUKIP() {
-    return `${rand(51, 92)}.${rand(10, 250)}.${rand(10, 250)}.${rand(10, 250)}`;
-  }
   function maskNumber(num) {
     if (num.length < 7) return num.slice(0, 3) + 'xxxxxxx';
-    const first = num.slice(0, 3);
-    const rest = 'x'.repeat(Math.max(4, num.length - 3));
-    return first + rest;
+    return num.slice(0, 3) + 'x'.repeat(Math.max(4, num.length - 3));
   }
   function fakeTime() {
     return `${pad(rand(0,23))}:${pad(rand(0,59))}:${pad(rand(0,59))} AM`;
   }
 
-  // ===== TERMINAL ADD LINE =====
   function addLine(html, delay = 0) {
     return new Promise(resolve => {
       setTimeout(() => {
@@ -1031,7 +983,6 @@
     return `<span class="lbl">[ ${label} ]</span><span class="val ${color}">${value}</span>`;
   }
 
-  // ===== BOOT SCREEN =====
   async function runBoot() {
     bootScreen.classList.add('show');
     const steps = [
@@ -1051,7 +1002,6 @@
     bootScreen.classList.remove('show');
   }
 
-  // ===== COUNTDOWN =====
   async function runCountdown() {
     countdownOverlay.classList.add('show');
     for (let n = 5; n >= 1; n--) {
@@ -1067,7 +1017,6 @@
     alarmSound();
   }
 
-  // ===== ACCESS DENIED POPUP LOOP =====
   async function deniedLoop() {
     for (let i = 0; i < 3; i++) {
       deniedPopup.classList.add('show');
@@ -1079,9 +1028,14 @@
     }
   }
 
-  // ===== MAIN PRANK =====
   async function startPrank() {
     if (running) return;
+
+    // Unlock audio on first click (mobile)
+    if (!audioCtx) {
+      try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch(e) {}
+    }
+    if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
 
     const rawNum = phone.value.trim().replace(/\s+/g, '').replace(/\+/g, '');
     if (!/^\d{7,15}$/.test(rawNum)) {
@@ -1092,26 +1046,21 @@
     running = true;
     startBtn.disabled = true;
 
-    // Step 1: Boot screen
     await runBoot();
-
-    // Step 2: Countdown
     await runCountdown();
 
-    // Step 3: Screen shake
     document.body.classList.add('shake');
     vibrate([200, 100, 200]);
     setTimeout(() => document.body.classList.remove('shake'), 600);
 
-    // Step 4: Reset & show alert
     terminal.innerHTML = '';
     alertOverlay.classList.add('show');
 
+    const c = COUNTRIES[currentCountry];
     const masked = maskNumber(rawNum);
-    const ip = fakeUKIP();
+    const ip = c.ip();
     const t = fakeTime();
 
-    // Step 5: Terminal sequence
     await addLine(`<span class="lbl">[ NEXXOO ]</span><span class="val">Initializing trace protocol...</span>`, 200);
     await sleep(450);
 
@@ -1130,7 +1079,6 @@
     await addLine(`<span class="lbl">[ TRACE ]</span><span class="val yellow">Bypassing VPN layers...</span>`, 200);
     await sleep(850);
 
-    // Fake camera popup
     camPopup.classList.add('show');
     beep(1000, 80, 'sine', 0.04);
 
@@ -1140,13 +1088,13 @@
     await addLine(line('IP ADDRESS', ip, 'red'), 200);
     await sleep(280);
 
-    await addLine(line('LOCATION', 'London, United Kingdom 🇬🇧', 'red'), 200);
+    await addLine(line('LOCATION', c.location, 'red'), 200);
     await sleep(280);
 
-    await addLine(line('DEVICE', 'Android 13 / Samsung Galaxy', 'blue'), 200);
+    await addLine(line('DEVICE', c.device, 'blue'), 200);
     await sleep(280);
 
-    await addLine(line('CARRIER', 'Vodafone UK', 'blue'), 200);
+    await addLine(line('CARRIER', c.carrier, 'blue'), 200);
     await sleep(280);
 
     await addLine(line('BROWSER', 'Chrome 121.0.6167', 'blue'), 200);
@@ -1158,13 +1106,12 @@
     await addLine(`<div class="t-line big">─── DEVICE BREACH ───</div>`, 200);
     await sleep(350);
 
-    // Access denied loop
     deniedLoop();
 
     await addLine(`<span class="lbl">[ ! ]</span><span class="val yellow">Compromising target device...</span>`, 200);
     await sleep(650);
 
-    await addLine(`<span class="lbl">[ ✔ ]</span><span class="val green">TARGET NUMBER : +${masked}</span>`, 200);
+    await addLine(`<span class="lbl">[ ✔ ]</span><span class="val green">TARGET NUMBER : ${c.prefix}${masked}</span>`, 200);
     await sleep(300);
 
     await addLine(`<span class="lbl">[ ✔ ]</span><span class="val green">DEVICE LOCKED</span>`, 200);
@@ -1219,4 +1166,4 @@
 </script>
 
 </body>
-  </html>
+ </html>
